@@ -151,9 +151,12 @@ function loadGPXFiles()
                         var velocidadactual = elevation[position][0] * 1000;
 
                         var velocidad =  (velocidadactual - (lastPosition * 1000))/intervalo;
+                        var velocidadKM = Math.round(velocidad*3.6);
 
 
                         mPos.setLatLng(lonlat[position]);
+                        var x = document.getElementsByClassName("icon");
+                        x[0].innerHTML = velocidadKM;
                         //mPos._icon.innerText = Math.round(velocidad*3.6);
 
                         /*popup.setLatLng(lonlat[position]);
